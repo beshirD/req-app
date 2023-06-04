@@ -1,9 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-
-import Counter from '../features/counter/Counter'
 import styles from '../styles/Home.module.css'
-
+//
+import TopBar from '../components/TopBar'
+import SearchContainer from '../components/SearchContainer'
+import FilterCards from '../components/filterComponents/FilterCards'
 const IndexPage: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -11,51 +12,11 @@ const IndexPage: NextPage = () => {
         <title>Redux Toolkit</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className={styles.header}>
-        <img src="/logo.svg" className={styles.logo} alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className={styles.link}
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className={styles.link}
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className={styles.link}
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className={styles.link}
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <div className='bg-[#05203C] w-full flex-col items-center mb-[100px] sm:mb-[200px]'>
+        <TopBar />
+        <SearchContainer />
+      </div>
+        <FilterCards />
     </div>
   )
 }

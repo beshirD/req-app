@@ -17,7 +17,7 @@ const DropDowns = (Props: DropDownProps) => {
     }
     return (
 
-        <Menu as="div" className="relative inline-block text-left w-full">
+        <Menu key={Props.title} as="div" className="relative inline-block text-left w-full">
             <div>
                 <Menu.Button className="inline-flex w-full justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-lg font-light text-gray-900 hover:bg-gray-20">
                     {Props.title}
@@ -43,12 +43,13 @@ const DropDowns = (Props: DropDownProps) => {
                                     :
                                     <>
                                         {
-                                            Props.option && Props.option.map((item,index) => {
+                                            Props.option && Props.option.map((item, index) => {
                                                 return (
                                                     <>
                                                         <Menu.Item key={index}>
                                                             {({ active }) => (
                                                                 <a
+                                                                 
                                                                     href="#"
                                                                     className={classNames(
                                                                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
